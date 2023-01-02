@@ -98,13 +98,18 @@ app.get("/personal", (req, res) => {
 
 app.post('/delete', (req,res)=>{
     const itemData = JSON.parse(req.body.checkbox)
-    Item.findByIdAndRemove(itemData._id, (err)=>{
+    const permanentTasks = ['63ac556862336e4e52a85c31','63ac556e62336e4e52a85c34','63ac557762336e4e52a85c37','63ac558662336e4e52a85c3a','63ac559562336e4e52a85c3e','63ac559b62336e4e52a85c41','63ac55b062336e4e52a85c4f','63ac55c062336e4e52a85c52']
+    if(!permanentTasks.includes(itemData._id)){
+      Item.findByIdAndRemove(itemData._id, (err)=>{
         if(err){
             console.log(err)
         } else {
             res.redirect(`/${itemData.category}`)
         }
     })
+    } else {
+      res.redirect(`/${itemData.category}`)
+    }
    
 })
 app.post("/work", (req, res) => {
@@ -144,9 +149,9 @@ app.post("/personal", (req, res) => {
 });
 
 let port = process.env.PORT;
-if(port===null || port == ""){
+if(port===null|| port == ""){
   port=3000;
 }
 app.listen(port, () => {
-  console.log("Server up on port 3000.");
+  console.log("Server up on port ",port);
 });
