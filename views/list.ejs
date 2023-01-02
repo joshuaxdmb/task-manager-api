@@ -1,0 +1,84 @@
+<%- include('header') -%>
+    <% if(title === 'Saturday' || title === 'Sunday'){%>
+    <h1><%= title %></h1>
+    <% } else { %>
+    <h1><%= title %></h1>
+    <% } %>
+    <div class="main-container">
+    <div class="quadrant-container">
+    <h2>Important-Not Urgent</h2>
+    <div class="list-container flex justify-content-center align-items-center">
+      <ulc class="list-group">
+        <% items.forEach((item)=>{ if(item.tag==='important-noturgent' && item.category===category){%>
+        <form action="/delete" method="post">
+        <li class="list-group-item" type="checkbox">
+            <input class="form-check-input me-1" type="checkbox" name="checkbox" value="<%=JSON.stringify(item)%>" aria-label="..." onChange="this.form.submit()" > <%=item.name%>
+        </li>
+      </form>
+        <%}})%>
+      </ul>
+      <form action=<%= postRoute  %>  method="post" class="form-items">
+        <input placeholder="New Item" type="text" name="newItem" class="input-field"/>
+        <button type="submit" name="button" class="btn btn-circle" value='important-noturgent'>+</button>
+      </form>
+    </div>
+  </div>
+  <div class="quadrant-container">
+  <h2>Important-Urgent</h2>
+    <div class="list-container flex justify-content-center align-items-center">
+      <ulc class="list-group">
+        <% items.forEach((item)=>{if(item.tag==='important-urgent'&& item.category===category){%>
+          <form action="/delete" method="post">
+            <li class="list-group-item" type="checkbox">
+              <input class="form-check-input me-1" type="checkbox" name="checkbox" value="<%=JSON.stringify(item)%>" aria-label="..." onChange="this.form.submit()" > <%=item.name%>
+          </li>
+          </form>
+        <%}})%> 
+      </ul>
+      <form action=<%= postRoute %>  method="post" class="form-items">
+        <input placeholder="New Item" type="text" name="newItem" class="input-field" />
+        <button type="submit" name="button" class="btn btn-circle" value='important-urgent'>+</button>
+      </form>
+    </div>
+    </div>
+  </div>
+  <div class="main-container">
+    <div class="quadrant-container">
+      <h2>Not Important-Not Urgent</h2>
+    <div class="list-container flex justify-content-center align-items-center">
+      <ulc class="list-group">
+        <% items.forEach((item)=>{if(item.tag==='notimportant-noturgent'&& item.category===category){%>
+          <form action="/delete" method="post">
+            <li class="list-group-item" type="checkbox">
+              <input class="form-check-input me-1" type="checkbox" name="checkbox" value="<%=JSON.stringify(item)%>" aria-label="..." onChange="this.form.submit()" > <%=item.name%>
+          </li>
+          </form>
+        <%}})%>
+      </ul>
+      <form action=<%=postRoute%> method="post" class="form-items">
+        <input placeholder="New Item" type="text" name="newItem" class="input-field" category=<% category %>  />
+        <button type="submit" name="button" class="btn btn-circle" value='notimportant-noturgent'>+</button>
+      </form>
+    </div>
+    </div>
+    <div class="quadrant-container">
+      <h2>Not Important-Urgent</h2>
+    <div class="list-container flex justify-content-center align-items-center">
+      <ul class="list-group">
+        <% items.forEach((item)=>{if(item.tag==='notimportant-urgent'&& item.category===category){%>
+          <form action="/delete" method="post">
+            <li class="list-group-item" type="checkbox">
+              <input class="form-check-input me-1" type="checkbox" name="checkbox" value="<%=JSON.stringify(item)%>" aria-label="..." onChange="this.form.submit()" > <%=item.name%>
+          </li>
+          </form>
+        <%}})%>
+      </ul>
+      <form action=<%= postRoute %> method="post" class="form-items">
+        <input placeholder="New Item" type="text" name="newItem" class="input-field" category=<% category %> />
+        <button type="submit" name="button" class="btn btn-circle" value='notimportant-urgent'>+</button>
+      </form>
+    </div>
+    </div>
+  </div>
+    <%- include('footer') -%>
+

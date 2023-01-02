@@ -1,0 +1,97 @@
+html {
+    background-color: #ccd5f9;
+}
+
+body{
+    background-color: #ccd5f9;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2{
+    color:aliceblue
+}
+
+h1{
+    text-align: center;
+    background-color: #7d94ef;
+    margin: 2% 35% 2% 35%;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.list-container{
+    margin: 0 2% 0 2%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 0 1% 0;
+    font-weight: 200;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 90%;
+}
+
+.btn-circle{
+    border-radius: 50%;
+    background-color:#7d94ef;
+    color:white;
+    font-weight: bolder;
+    border-width: 0;
+    border-color: white;
+    margin-right: 10px;
+}
+
+.form-items{
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.input-field{
+    border-color: white;
+    border-style:none;
+    padding: 10px 20px 10px 20px;
+    margin-top: 4%;
+    width:82%;
+}
+
+.list-group-item{
+    padding:20px;
+    border-left: 0;
+    border-right: 0;
+    font-weight: 100;
+    border-radius: 10px;
+    border-top-width: 0px;
+}
+
+.list-group{
+    border-top-width: 0px;
+    border-radius: 10px;
+    padding-top:10px
+}
+
+.form-check-input{
+    padding-right: 10px;
+}
+
+li{
+    font-weight: 100;
+}
+
+.main-container{
+    flex-direction: row;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.quadrant-container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
